@@ -13,7 +13,7 @@
     scroll-layers = <5>;
 };
 
-/ {
+ / {
     combos {
         compatible = "zmk,combos";
 
@@ -28,12 +28,14 @@
         };
 
         muhennkann {
-            bindings = <&to_layer_0 INT_MUHENKAN>;
+            // MUHENKANを使用（日本語配列用）
+            bindings = <&kp MUHENKAN>;
             key-positions = <11 10>;
         };
 
         double_quotation {
-            bindings = <&kp DOUBLE_QUOTES>;
+            // ダブルクォートはLS(APOSTROPHE)
+            bindings = <&kp LS(APOSTROPHE)>;
             key-positions = <20 21>;
         };
 
@@ -44,13 +46,6 @@
     };
 
     macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
-
         /* ⌘+Option を押しっぱなしにする “ホールド専用”マクロ */
         cmd_opt_hold: cmd_opt_hold {
             compatible = "zmk,behavior-macro";
@@ -65,9 +60,10 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo &to_layer_0>;
             #binding-cells = <2>;
             tapping-term-ms = <100>;
+            // &moは標準のモーメンタリーレイヤースイッチ
+            bindings = <&mo 0 &kp NO>;
         };
 
         /* タップ=←、ホールド=⌘+Option */

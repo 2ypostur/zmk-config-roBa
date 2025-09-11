@@ -70,7 +70,15 @@
            bindings = <&macro_press &kp LGUI &kp LALT>,
                       <&macro_release &kp LGUI &kp LALT>;
     };
+        tap_left: tap_left {
+          compatible = "zmk,behavior-macro";
+          label = "TAP_LEFT";
+          #binding-cells = <0>;
+          bindings = <&kp LEFT_ARROW>;   // ← ここで Left を送る。phandleは 0 引数で参照できる
+    };
+  };
 };
+
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
@@ -85,7 +93,7 @@
          label = "HOLD_CMDOPT_TAP_LEFT";
          #binding-cells = <0>;
          tapping-term-ms = <200>;
-         bindings = <&cmd_opt &kp LEFT_ARROW>;
+         bindings = < &cmd_opt &tap_left >;
     };
 };
 keymap {

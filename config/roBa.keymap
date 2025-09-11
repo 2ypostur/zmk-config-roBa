@@ -52,22 +52,13 @@
         };
     };
 {
-    behaviors {
-        lt_to_layer_0: lt_to_layer_0 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "LAYER_TAP_TO_0";
-            #binding-cells = <2>;
-            tapping-term-ms = <100>;
-            /* ここは phandle 2つだけ。引数は keymap 側で渡す！ */
-            bindings = <&mo>, <&to_layer_0>;
-        };
-
-        /* 追加機能：ホールド= ⌘+Option+Left、タップ= Left */
+ behaviors {
         hold_cmdopt_tap_left: hold_cmdopt_tap_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOLD_CMDOPT_TAP_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+            /* ホールド時: ⌘+Option+Left, タップ時: Left Arrow */
             bindings = <&kp LG(LA(LEFT_ARROW))>, <&kp LEFT_ARROW>;
         };
     };

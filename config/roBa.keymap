@@ -70,9 +70,7 @@
            bindings = <&macro_press &kp LGUI &kp LALT>,
                       <&macro_release &kp LGUI &kp LALT>;
     };
-
-    };
-
+};
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
@@ -90,12 +88,11 @@
         // ホールド時: ⌘+Option マクロ, タップ時: Left Arrow
         bindings = <&cmd_opt>, <&kp LEFT_ARROW>;
     };
-};
-    };
 
-    keymap {
+keymap {
         compatible = "zmk,keymap";
-
+ };
+};
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E                        &kp R             &kp T                                                                                 &kp Y          &kp U        &lt 5 I                    &kp O                    &kp P

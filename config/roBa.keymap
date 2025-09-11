@@ -33,7 +33,7 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
-    };  // ← combosの正しい閉じカッコ位置
+    }; // ← combosのクロージングはここ
 
     macros {
         /* ⌘+Option を押しっぱなしにする “ホールド専用”マクロ */
@@ -63,7 +63,6 @@
             bindings = <&cmd_opt_hold &kp LEFT_ARROW>;
         };
     };
-
     keymap {
         compatible = "zmk,keymap";
 

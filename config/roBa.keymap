@@ -11,18 +11,6 @@
 &trackball {
     // automouse-layer = <4>;
     scroll-layers = <5>;
-
-    // arrows {
-    //     layers = <3>;
-    //     bindings =
-    //         <&kp RIGHT_ARROW>,
-    //         <&kp LEFT_ARROW>,
-    //         <&kp UP_ARROW>,
-    //         <&kp DOWN_ARROW>;
-    //     tick = <10>;
-    //     wait-ms = <5>;
-    //     tap-ms = <5>;
-    // };
 };
 
 / {
@@ -63,7 +51,7 @@
             label = "TO_LAYER_0";
         };
 
-        /* ホールド時に使う：⌘+Option を押し下げ/離す */
+        /* ⌘+Option を押しっぱなしにする “ホールド専用”マクロ */
         cmd_opt_hold: cmd_opt_hold {
             compatible = "zmk,behavior-macro";
             label = "CMD_OPT_HOLD";
@@ -71,32 +59,24 @@
             bindings = <&macro_press &kp LGUI &kp LALT>,
                        <&macro_release &kp LGUI &kp LALT>;
         };
-
-        /* タップ時に使う：Left Arrow を単発送信 */
-        tap_left: tap_left {
-            compatible = "zmk,behavior-macro";
-            label = "TAP_LEFT";
-            #binding-cells = <0>;
-            bindings = <&kp LEFT_ARROW>;
-        };
     };
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+            bindings = <&mo &to_layer_0>;
             #binding-cells = <2>;
             tapping-term-ms = <100>;
         };
 
-        /* ホールドで ⌘+Option、タップで Left Arrow */
-        hold_cmdopt_tap_left: hold_cmdopt_tap_left {
+        /* タップ=←、ホールド=⌘+Option */
+        ht_cmdopt_left: ht_cmdopt_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOLD_CMDOPT_TAP_LEFT";
+            label = "HT_CMDOPT_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <&cmd_opt_hold &tap_left>;
+            bindings = <&cmd_opt_hold &kp LEFT_ARROW>;
         };
     };
 
@@ -107,8 +87,8 @@
             bindings = <
 &kp Q             &kp W         &kp E                        &kp R             &kp T                                                                                 &kp Y          &kp U        &kp I                    &kp O                    &kp P
 &kp A             &kp S         &kp D                        &kp F             &kp G                             &kp LS(LG(S))                        &kp MINUS      &kp H          &kp J        &kp K                    &kp L                    &mt LEFT_SHIFT NUMBER_6
-&kp Z             &kp X         &kp C                        &kp V             &kp B                             &kp COLON                            &kp SEMICOLON  &kp N          &kp M        &hold_cmdopt_tap_left    &mt LEFT_SHIFT NUMBER_5  &kp RIGHT_ARROW
-&kp LEFT_SHIFT    &kp LEFT_ALT  &lt_to_layer_0 6 LANG1        &kp LEFT_GUI      &lt 3 LANG2                         &kp SPACE                                           &kp BACKSPACE  &lt 1 ENTER                                                    &mt LCTRL NUMBER_9
+&kp Z             &kp X         &kp C                        &kp V             &kp B                             &kp COLON                            &kp SEMICOLON  &kp N          &kp M        &ht_cmdopt_left 0        &mt LEFT_SHIFT NUMBER_5  &kp RIGHT_ARROW
+&kp LEFT_SHIFT    &kp LEFT_ALT  &lt_to_layer_0 6 LANG1       &kp LEFT_GUI      &lt 3 LANG2                         &kp SPACE                            &kp BACKSPACE  &lt 1 ENTER                                                    &mt LCTRL NUMBER_9
             >;
         };
 

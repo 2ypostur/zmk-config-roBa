@@ -76,10 +76,8 @@
           #binding-cells = <0>;
           bindings = <&kp LEFT_ARROW>;   // ← ここで Left を送る。phandleは 0 引数で参照できる
     };
-  };
-};
-
-    behaviors {
+ };
+ behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
@@ -94,9 +92,9 @@
          #binding-cells = <0>;
          tapping-term-ms = <200>;
          bindings = < &cmd_opt &tap_left >;
-    };
-};
-keymap {
+   };
+ };
+ keymap {
         compatible = "zmk,keymap";
 
         default_layer {
@@ -163,5 +161,5 @@ keymap {
             >;
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
-    };
+  };
 };

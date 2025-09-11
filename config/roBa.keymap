@@ -88,11 +88,10 @@
         // ホールド時: ⌘+Option マクロ, タップ時: Left Arrow
         bindings = <&cmd_opt>, <&kp LEFT_ARROW>;
     };
-
+};
 keymap {
         compatible = "zmk,keymap";
- };
-};
+
         default_layer {
             bindings = <
 &kp Q             &kp W         &kp E                        &kp R             &kp T                                                                                 &kp Y          &kp U        &lt 5 I                    &kp O                    &kp P

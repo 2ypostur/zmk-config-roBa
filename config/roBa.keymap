@@ -89,7 +89,7 @@
         hold_cmdopt_tap_left: hold_cmdopt_tap_left {
          compatible = "zmk,behavior-hold-tap";
          label = "HOLD_CMDOPT_TAP_LEFT";
-         #binding-cells = <0>;
+         #binding-cells = <2>;
          tapping-term-ms = <200>;
          bindings = < &cmd_opt &tap_left >;
    };

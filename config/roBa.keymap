@@ -21,17 +21,18 @@ combos {
         bindings = <&kp TAB>;
         key-positions = <11 12>;
     };
-
     shift_tab {
         bindings = <&kp LS(TAB)>;
         key-positions = <12 13>;
     };
-
+    muhennkann {
+        bindings = <&kp MUHENKAN>;
+        key-positions = <11 10>;
+    };
     double_quotation {
         bindings = <&kp LS(APOSTROPHE)>;
         key-positions = <20 21>;
     };
-
     eq {
         bindings = <&kp EQUAL>;
         key-positions = <24 25>;

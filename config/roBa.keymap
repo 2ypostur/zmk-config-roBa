@@ -81,10 +81,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E                        &kp R             &kp T                                                          &kp Y        &kp U  &lt 5 I    &kp O    &kp P
-&kp A             &kp S         &kp D                        &kp F             &kp G                             &kp LS(LG(S))                        &kp MINUS      &kp H        &kp J  &kp K      &kp L    &kp SQT
-&kp Z             &kp X         &kp C                        &kp V             &kp B                             &kp COLON                            &kp SEMICOLON  &kp N        &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LEFT_SHIFT    &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &kp LEFT_GUI      &lt_to_layer_0 3 INT_MUHENKAN     &kp SPACE                    &kp BACKSPACE  &lt 1 ENTER                             &kp DEL
+&kp Q             &kp W         &kp E                        &kp R             &kp T                                                                                 &kp Y          &kp U        &lt 5 I    &kp O    &kp P
+&kp A             &kp S         &kp D                        &kp F             &kp G                             &kp LS(LG(S))                        &kp MINUS      &kp H          &kp J        &kp K      &kp L    &kp SQT
+&kp Z             &kp X         &kp C                        &kp V             &kp B                             &kp COLON                            &kp SEMICOLON  &kp N          &kp M        &kp COMMA  &kp DOT  &kp SLASH
+&kp LEFT_SHIFT    &kp LEFT_ALT  &lt_to_layer_0 6 INT_HENKAN  &kp LEFT_GUI      &lt_to_layer_0 3 INT_MUHENKAN     &kp SPACE                                           &kp BACKSPACE  &lt 1 ENTER                      &kp DEL
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -92,10 +92,10 @@
 
         FUNCTION {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                       &kp F1  &kp F2  &kp F3  &kp F4  &kp F5
-&trans  &trans  &trans  &trans  &trans  &trans      &kp F13  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans  &trans  &trans  &trans  &kp F11
-&trans  &trans  &trans  &trans  &trans  &trans      &trans   &trans                          &kp F12
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans                  &trans
             >;
         };
 
@@ -104,7 +104,7 @@
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans                  &trans
             >;
         };
 
@@ -113,7 +113,7 @@
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans                  &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -124,7 +124,7 @@
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans                  &trans
             >;
         };
 
@@ -133,7 +133,7 @@
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans  &trans              &trans  &trans                  &trans
             >;
         };
 

@@ -19,7 +19,6 @@
     //         <&kp LEFT_ARROW>,
     //         <&kp UP_ARROW>,
     //         <&kp DOWN_ARROW>;
-
     //     tick = <10>;
     //     wait-ms = <5>;
     //     tap-ms = <5>;
@@ -41,6 +40,7 @@
         };
 
         muhennkann {
+            // まずは確実にビルドを通す：コンボでベースレイヤへ
             bindings = <&to 0>;
             key-positions = <11 10>;
         };
@@ -56,21 +56,22 @@
         };
     };
 
-    macros {
-        to_layer_0: to_layer_0 {
-            compatible = "zmk,behavior-macro-one-param";
-            #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
-            label = "TO_LAYER_0";
-        };
-    };
+    // （必要になったらマクロを復活させてください）
+    // macros {
+    //     to_layer_0: to_layer_0 {
+    //         compatible = "zmk,behavior-macro";
+    //         #binding-cells = <0>;
+    //         bindings = <&to 0>;
+    //         label = "TO_LAYER_0";
+    //     };
+    // };
 
     behaviors {
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
+            // ← &mo にレイヤ番号必須
             bindings = <&mo 0>, <&to 0>;
-
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
@@ -79,12 +80,23 @@
     keymap {
         compatible = "zmk,keymap";
 
+        /*
+         * レイヤ番号（定義順で 0 起算）:
+         * 0: default_layer
+         * 1: FUNCTION
+         * 2: NUM
+         * 3: ARROW
+         * 4: MOUSE
+         * 5: SCROLL
+         * 6: layer_6
+         */
+
         default_layer {
             bindings = <
 &kp Q               &kp W         &kp E              &kp R          &kp T                                                           &kp Y            &kp U         &kp I                     &kp O                     &kp P
-&kp A               &kp S         &kp D              &kp F          &kp G           &kp LS(LG(S))                  &kp MINUS        &kp H            &kp J         &kp K                     &kp L                     &mt LEFT_SHIFT NUMBER_6 
-&kp Z               &kp X         &kp C              &kp V          &kp B           &kp COLON                      &kp SEMI    &kp N            &kp M         &mt LEFT_ALT LEFT_ARROW   &mt LEFT_SHIFT NUMBER_5   &kp RIGHT_ARROW
-&kp LEFT_SHIFT      &kp LEFT_ALT  &lt 5 LANG1        &kp LEFT_GUI   &lt 2 LANG 2    &kp SPACE                                       &lt 6 BACKSPACE  &lt 1 ENTER                                                       &mt LCTRL NUMBER_9
+&kp A               &kp S         &kp D              &kp F          &kp G           &kp LS(LG(S))                  &kp MINUS        &kp H            &kp J         &kp K                     &kp L                     &mt LEFT_SHIFT &kp NUMBER_6
+&kp Z               &kp X         &kp C              &kp V          &kp B           &kp COLON                      &kp SEMI         &kp N            &kp M         &mt LEFT_ALT &kp LEFT_ARROW   &mt LEFT_SHIFT &kp NUMBER_5   &kp RIGHT_ARROW
+&kp LEFT_SHIFT      &kp LEFT_ALT  &lt 5 &kp LANG1     &kp LEFT_GUI   &lt 2 &kp LANG2  &lt 1 &kp SPACE                                &lt 6 &kp BACKSPACE  &lt 1 &kp ENTER                                            &mt LCTRL &kp NUMBER_9
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -142,7 +154,7 @@
 &kp F1        &kp F2        &kp F3        &kp F4        &kp F5                                                    &trans  &trans  &trans  &trans  &trans
 &kp F6        &kp F7        &kp F8        &kp F9        &kp F10                                   &bt BT_CLR_ALL  &trans  &trans  &trans  &trans  &trans
 &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &bootloader               &bt BT_CLR      &trans  &trans  &trans  &trans  &trans
-&trans        &trans        &trans        &trans        &trans          &trans                                    &trans  &trans                  &trans                 
+&trans        &trans        &trans        &trans        &trans          &trans                                    &trans  &trans                  &trans
             >;
         };
     };

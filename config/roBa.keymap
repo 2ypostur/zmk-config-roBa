@@ -85,8 +85,7 @@
          label = "HOLD_CMDOPT_TAP_LEFT";
          #binding-cells = <0>;
          tapping-term-ms = <200>;
-        // ホールド時: ⌘+Option マクロ, タップ時: Left Arrow
-        bindings = <&cmd_opt>, <&kp LEFT_ARROW>;
+         bindings = <&cmd_opt &kp LEFT_ARROW>;
     };
 };
 keymap {

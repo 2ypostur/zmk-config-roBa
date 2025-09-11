@@ -86,7 +86,6 @@
 &kp Z             &kp X         &kp C                        &kp V             &kp B                             &kp COLON                            &kp SEMICOLON  &kp N          &kp M        &mt LEFT_ALT LEFT_ARROW  &mt LEFT_SHIFT NUMBER_5  &kp RIGHT_ARROW
 &kp LEFT_SHIFT    &kp LEFT_ALT  &lt_to_layer_0 6 LANG1  &kp LEFT_GUI      &lt 3 LANG2    &kp SPACE                                           &kp BACKSPACE  &lt 1 ENTER                                                    &mt LCTRL NUMBER_9 
             >;
-            encoder-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
@@ -126,6 +125,7 @@
 &kp LEFT_SHIFT  &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3   &kp MINUS     &trans              &trans     &kp SLASH        &kp LEFT_ARROW   &kp LEFT_ARROW      &kp DOWN_ARROW   &kp RIGHT_ARROW
 &trans          &trans        &trans         &trans         &trans        &trans                         &trans           &trans                                                &kp LCTRL
             >;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         SCROLL {
@@ -135,6 +135,7 @@
 &kp LEFT_SHIFT  &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3   &kp MINUS     &trans              &trans     &kp SLASH        &kp LEFT_ARROW   &kp LEFT_ARROW      &kp DOWN_ARROW   &kp RIGHT_ARROW
 &trans          &trans        &trans         &trans         &trans        &trans                         &trans           &trans                                                &kp LCTRL
             >;
+            sensor-bindings = <&inc_dec_kp PAGE_UP PAGE_DOWN>;
         };
 
         layer_6 {

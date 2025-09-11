@@ -14,26 +14,27 @@
 };
 
  / {
-combos {
-    compatible = "zmk,combos";
+    combos {
+        compatible = "zmk,combos";
 
-    tab {
-        bindings = <&kp TAB>;
-        key-positions = <11 12>;
-    };
-    shift_tab {
-        bindings = <&kp LS(TAB)>;
-        key-positions = <12 13>;
-    };
-    double_quotation {
-        bindings = <&kp LS(APOSTROPHE)>;
-        key-positions = <20 21>;
-    };
-    eq {
-        bindings = <&kp EQUAL>;
-        key-positions = <24 25>;
-    };
-};
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <11 12>;
+        };
+        shift_tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <12 13>;
+        };
+        double_quotation {
+            bindings = <&kp LS(APOSTROPHE)>;
+            key-positions = <20 21>;
+        };
+        eq {
+            bindings = <&kp EQUAL>;
+            key-positions = <24 25>;
+        };
+    };  // ← combosの正しい閉じカッコ位置
+
     macros {
         /* ⌘+Option を押しっぱなしにする “ホールド専用”マクロ */
         cmd_opt_hold: cmd_opt_hold {
@@ -51,11 +52,9 @@ combos {
             label = "LAYER_TAP_TO_0";
             #binding-cells = <2>;
             tapping-term-ms = <100>;
-            // &moは標準のモーメンタリーレイヤースイッチ
             bindings = <&mo 0 &kp NO>;
         };
 
-        /* タップ=←、ホールド=⌘+Option */
         ht_cmdopt_left: ht_cmdopt_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CMDOPT_LEFT";

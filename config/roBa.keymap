@@ -103,7 +103,7 @@
 &kp LEFT_SHIFT  &kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3   &kp MINUS     &trans              &trans     &kp SLASH        &kp LEFT_ARROW   &kp LEFT_ARROW      &kp DOWN_ARROW   &kp RIGHT_ARROW
 &trans          &trans        &trans         &trans         &trans        &trans                         &trans           &trans                                                &kp LCTRL
             >;
-            sensor-bindings = < &inc_dec_kp MW_UP MW_DOWN  &inc_dec_kp MW_LEFT MW_RIGHT>;
+            sensor-bindings = < &inc_dec_kp MW_UP MW_DOWN &inc_dec_kp MW_LEFT MW_RIGHT>;
         };
 
         MOUSE {

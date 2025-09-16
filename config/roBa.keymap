@@ -54,8 +54,7 @@
                        <&macro_release &kp LGUI &kp LSHIFT>;
         };
 
-        /* ホールド中ずっと ⌘+Option を押し続ける */
-        cmd_opt_hold: cmd_opt_hold {
+            cmd_opt_hold: cmd_opt_hold {
             compatible = "zmk,behavior-macro";
             label = "CMD_OPT_HOLD";
             #binding-cells = <0>;
@@ -76,22 +75,22 @@
             bindings = <&mo>, <&to_layer_0>;
         };
 
-   ht_cmdshift_left: ht_cmdshift_left {
-       compatible = "zmk,behavior-hold-tap";
-       label = "HT_CMDSHIFT_LEFT";
-       #binding-cells = <2>;
-       tapping-term-ms = <200>;
-       /* 1つの <...> に、ホールド→タップの順で並べる */
-       bindings = <&cmd_shift_hold &kp LEFT_ARROW>;
-  };
+    ht_cmdshift_left: ht_cmdshift_left {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_CMDSHIFT_LEFT";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            /* 重要：1組の < ... > に ホールド→タップ の順で並べる（カンマで区切らない） */
+            bindings = <&cmd_shift_hold &kp LEFT_ARROW>;
+        };
 
-   ht_cmdopt_5: ht_cmdopt_5 {
-       compatible = "zmk,behavior-hold-tap";
-       label = "HT_CMDOPT_5";
-       #binding-cells = <2>;
-       tapping-term-ms = <200>;
-       bindings = <&cmd_opt_hold &kp NUMBER_5>;
-   };
+        ht_cmdopt_5: ht_cmdopt_5 {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_CMDOPT_5";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&cmd_opt_hold &kp NUMBER_5>;
+        };
 };
     keymap {
         compatible = "zmk,keymap";
@@ -100,7 +99,7 @@
             bindings = <
 &kp Q             &kp W         &kp E                        &kp R             &kp T                                                                                 &kp Y          &kp U        &lt 5 I                    &kp O                    &kp P
 &kp A             &kp S         &kp D                        &kp F             &kp G                             &kp LS(LG(S))                        &kp MINUS      &kp H          &kp J        &kp K                      &kp L                    &mt LEFT_SHIFT NUMBER_6
-&kp Z             &kp X         &kp C                        &kp V             &kp B                             &kp COLON                            &kp SEMICOLON  &kp N          &kp M        &ht_cmdshift_left 0 0      &mt &ht_cmdopt_5 0 0     &kp RIGHT_ARROW
+&kp Z             &kp X         &kp C                        &kp V             &kp B                             &kp COLON                            &kp SEMICOLON  &kp N          &kp M        &ht_cmdshift_left 0 0      &ht_cmdopt_5 0 0         &kp RIGHT_ARROW
 &kp LEFT_SHIFT    &kp LEFT_ALT  &lt_to_layer_0 6 LANG1  &kp LEFT_GUI      &lt 3 LANG2    &kp SPACE                                                    &kp BACKSPACE  &lt 1 ENTER                                                                     &mt LCTRL NUMBER_9
             >;
 

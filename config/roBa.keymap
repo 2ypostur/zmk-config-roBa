@@ -76,22 +76,22 @@
             bindings = <&mo>, <&to_layer_0>;
         };
 
-        ht_cmdshift_left: ht_cmdshift_left {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_CMDSHIFT_LEFT";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&cmd_shift_hold>, <&kp LEFT_ARROW>;
-        };
+   ht_cmdshift_left: ht_cmdshift_left {
+       compatible = "zmk,behavior-hold-tap";
+       label = "HT_CMDSHIFT_LEFT";
+       #binding-cells = <2>;
+       tapping-term-ms = <200>;
+       /* 1つの <...> に、ホールド→タップの順で並べる */
+       bindings = <&cmd_shift_hold &kp LEFT_ARROW>;
+  };
 
-        /* ホールド=⌘+Option(押しっぱなし), タップ=数字の5 */
-        ht_cmdopt_5: ht_cmdopt_5 {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HT_CMDOPT_5";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            bindings = <&cmd_opt_hold>, <&kp NUMBER_5>;
-        };
+   ht_cmdopt_5: ht_cmdopt_5 {
+       compatible = "zmk,behavior-hold-tap";
+       label = "HT_CMDOPT_5";
+       #binding-cells = <2>;
+       tapping-term-ms = <200>;
+       bindings = <&cmd_opt_hold &kp NUMBER_5>;
+   };
 };
     keymap {
         compatible = "zmk,keymap";

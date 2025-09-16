@@ -61,6 +61,21 @@
             bindings = <&macro_press &kp LEFT_GUI &kp LEFT_ALT>,
                        <&macro_release &kp LEFT_GUI &kp LEFT_ALT>;
         };
+
+       tap_left: tap_left {
+            compatible = "zmk,behavior-macro";
+            label = "TAP_LEFT";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_ARROW>;
+        };
+
+
+        tap_5: tap_5 {
+            compatible = "zmk,behavior-macro";
+            label = "TAP_5";
+            #binding-cells = <0>;
+            bindings = <&kp NUMBER_5>;
+        };
     };
 
     behaviors {
@@ -77,15 +92,16 @@
             label = "HT_CMDSHIFT_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <&cmd_shift_hold &kp LEFT_ARROW>;
+            bindings = <&cmd_shift_hold &tap_left>;
         };
 
-        ht_cmdopt_5: ht_cmdopt_5 {
+        /* ホールド=⌘+Option、タップ=5（phandleのみを渡す） */
+    ht_cmdopt_5: ht_cmdopt_5 {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CMDOPT_5";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <&cmd_opt_hold &kp NUMBER_5>;
+            bindings = <&cmd_opt_hold &tap_5>;
         };
 };
     keymap {

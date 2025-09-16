@@ -47,19 +47,20 @@
             label = "TO_LAYER_0";
         };
         cmd_shift_hold: cmd_shift_hold {
-         compatible = "zmk,behavior-macro";
-         label = "CMD_SHIFT_HOLD";
-         #binding-cells = <0>;
-         bindings = <&macro_press &kp LGUI &kp LEFT_SHIFT>,
-         <&macro_release &kp LGUI &kp LEFT_SHIFT>;
+            compatible = "zmk,behavior-macro";
+            label = "CMD_SHIFT_HOLD";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI &kp LSHIFT>,
+                       <&macro_release &kp LGUI &kp LSHIFT>;
         };
 
+        /* ホールド中ずっと ⌘+Option を押し続ける */
         cmd_opt_hold: cmd_opt_hold {
-         compatible = "zmk,behavior-macro";
-         label = "CMD_OPT_HOLD";
-         #binding-cells = <0>;
-         bindings = <&macro_press &kp LGUI &kp LALT>,
-         <&macro_release &kp LGUI &kp LALT>;
+            compatible = "zmk,behavior-macro";
+            label = "CMD_OPT_HOLD";
+            #binding-cells = <0>;
+            bindings = <&macro_press &kp LGUI &kp LALT>,
+                       <&macro_release &kp LGUI &kp LALT>;
         };
     };
 
@@ -80,18 +81,16 @@
             label = "HT_CMDSHIFT_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            /* ホールド: ⌘+Shift を保持 / タップ: ← を単発 */
-            bindings = < &cmd_shift_hold &kp LEFT_ARROW >;
+            bindings = <&cmd_shift_hold>, <&kp LEFT_ARROW>;
         };
 
+        /* ホールド=⌘+Option(押しっぱなし), タップ=数字の5 */
         ht_cmdopt_5: ht_cmdopt_5 {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CMDOPT_5";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            /* ホールド: ⌘+Option を保持 / タップ: 5 を単発 */
-            bindings = < &cmd_opt_hold &kp NUMBER_5 >;
-
+            bindings = <&cmd_opt_hold>, <&kp NUMBER_5>;
         };
 };
     keymap {

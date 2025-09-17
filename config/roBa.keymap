@@ -76,6 +76,37 @@
             #binding-cells = <0>;
             bindings = <&kp NUMBER_5>;
         };
+　　　　/* 次の1打鍵だけ ⌘+Shift を有効化（Sticky） */
+       cmd_shift_latch: cmd_shift_latch {
+            compatible = "zmk,behavior-macro";
+            label = "CMD_SHIFT_LATCH";
+            #binding-cells = <0>;
+            bindings = <&sk LGUI>, <&sk LSHIFT>;
+   };
+
+　　　　/* 次の1打鍵だけ ⌘+Option を有効化（Sticky） */
+       cmd_opt_latch: cmd_opt_latch {
+           compatible = "zmk,behavior-macro";
+           label = "CMD_OPT_LATCH";
+           #binding-cells = <0>;
+           bindings = <&sk LGUI>, <&sk LALT>;
+　　　 };
+
+　　　　/* タップで Left Arrow を送る（既にあれば流用可） */
+       tap_left: tap_left {
+           compatible = "zmk,behavior-macro";
+           label = "TAP_LEFT";
+           #binding-cells = <0>;
+           bindings = <&kp LEFT_ARROW>;
+　　　 };
+
+　　　　/* タップで「5」を送る（既にあれば流用可） */
+　　　　tap_5: tap_5 {
+           compatible = "zmk,behavior-macro";
+           label = "TAP_5";
+           #binding-cells = <0>;
+           bindings = <&kp NUMBER_5>;
+　　　 };
     };
 
     behaviors {

@@ -62,7 +62,7 @@
             compatible = "zmk,behavior-macro";
             label = "CMD_SHIFT_LATCH";
             #binding-cells = <0>;
-            bindings = <&sk LGUI>, <&sk LSHIFT>;
+            bindings = <&sk LGUI &sk LSHIFT>;
         };
 
         /* 次の1打鍵だけ ⌘+Option を有効化（Sticky） */
@@ -70,7 +70,7 @@
             compatible = "zmk,behavior-macro";
             label = "CMD_OPT_LATCH";
             #binding-cells = <0>;
-            bindings = <&sk LGUI>, <&sk LALT>;
+            bindings = <&sk LGUI &sk LALT>;
         };
 
         /* タップ用の単発キー（必要なら流用） */

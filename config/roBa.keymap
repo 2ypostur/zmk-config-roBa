@@ -17,6 +17,16 @@
     combos {
         compatible = "zmk,combos";
 
+        jp_LANG1 {
+            bindings = <&kp LANG1>;
+            key-positions = <6 7>;
+        };
+
+        en_LANG2 {
+            bindings = <&kp LANG2>;
+            key-positions = <2 3>;
+        };
+
         tab {
             bindings = <&kp TAB>;
             key-positions = <11 12>;

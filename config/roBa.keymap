@@ -100,7 +100,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CMDSHIFT_LEFT";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&cmd_shift_latch &tap_left>;
         };
 
@@ -109,7 +109,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CMDOPT_5";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&cmd_opt_latch &tap_5>;
         };
     };
